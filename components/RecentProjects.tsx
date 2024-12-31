@@ -4,11 +4,12 @@ import { FaLocationArrow } from "react-icons/fa6";
 import { projects } from "@/data";
 import { PinContainer } from "./ui/Pin";
 import MagicButton from "./MagicButton";
+import Image from "next/image";
 
 const RecentProjects = () => {
   return (
     <div className="py-20">
-      <h1 className="heading">
+      <h1 className="heading text-center">
         A small selection of{" "}
         <span className="text-purple">recent projects</span>
       </h1>
@@ -24,16 +25,24 @@ const RecentProjects = () => {
                   className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                   style={{ backgroundColor: "#13162D" }}
                 >
-                  <img src="/bg.png" alt="bgimg" />
+                  <Image
+                    src="/bg.png"
+                    alt="Background"
+                    layout="fill"
+                    objectFit="cover"
+                  />
                 </div>
-                <img
+                <Image
                   src={item.img}
-                  alt="cover"
+                  alt={`${item.title} cover`}
+                  layout="intrinsic"
+                  width={300}
+                  height={200}
                   className="z-10 absolute bottom-0"
                 />
               </div>
 
-              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
+              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1 text-center">
                 {item.title}
               </h1>
 
@@ -47,19 +56,26 @@ const RecentProjects = () => {
                         transform: `translateX(-${5 * index + 2}px)`,
                       }}
                     >
-                      <img src={icon} alt={`icon-${index}`} className="p-2" />
+                      <Image
+                        src={icon}
+                        alt={`Icon ${index}`}
+                        width={24}
+                        height={24}
+                        className="p-2"
+                      />
                     </div>
                   ))}
                 </div>
-
-                <div className="flex justify-center items-center"></div>
               </div>
 
-              {/* Add MagicButton here */}
               <div className="mt-5">
-                <a href="https://www.behance.net/imdidul">
+                <a
+                  href="https://www.behance.net/imdidul"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <MagicButton
-                    title="See More Project"
+                    title="See More Projects"
                     icon={<FaLocationArrow />}
                     position="right"
                   />
