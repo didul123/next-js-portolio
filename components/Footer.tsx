@@ -42,11 +42,9 @@ const Footer = () => {
       </div>
 
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center relative z-10">
-        <p className="md:text-base text-sm md:font-normal font-light text-center md:text-left">
+        <p className="md:text-base text-sm md:font-normal font-light text-center md:text-center mx-auto">
           Copyright © 2025 Didul Adeesha - UI/UX Designer
         </p>
-
-        <div className="flex items-center md:gap-3 gap-6 mt-5 md:mt-0"></div>
       </div>
     </footer>
   );
